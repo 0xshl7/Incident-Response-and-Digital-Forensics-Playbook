@@ -1,4 +1,8 @@
 # Incident-Response-and-Digital-Forensics-Playbook
+
+Objective:
+Build and simulate the complete Incident Response Lifecycle — from preparation to post-incident analysis.
+
 Team Members:
  1- Sohail Yasser Sayed 
  2- Ahmed Abdelmonem Sherif 
