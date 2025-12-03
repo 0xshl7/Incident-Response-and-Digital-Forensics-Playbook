@@ -1,0 +1,22 @@
+# Enhanced collect_evidence.ps1 (save as C:\evidence\collect_evidence.ps1 then run as Admin)
+$ts=(Get-Date).ToString("yyyy-MM-dd_HH-mm-ss")
+$Base="C:\evidence\$ts"
+New-Item -Path $Base -ItemType Directory -Force | Out-Null
+systeminfo | Out-File "$Base\systeminfo.txt"
+Get-Process | Sort-Object CPU -Descending | Out-File "$Base\process_list.txt"
+tasklist /v > "$Base\tasklist_verbose.txt"
+Get-Service | Out-File "$Base\services.txt"
+ipconfig /all > "$Base\ipconfig_all.txt"
+netstat -ano > "$Base\netstat_ano.txt"
+wevtutil epl System "$Base\System.evtx"
+wevtutil epl Application "$Base\Application.evtx"
+wevtutil epl Security "$Base\Security.evtx"
+reg save HKLM\SOFTWARE "$Base\SOFTWARE.hiv" /y 2>$null
+reg save HKLM\SYSTEM "$Base\SYSTEM.hiv" /y 2>$null
+reg save HKCU\Software "$Base\NTUSER.DAT" /y 2>$null
+New-Item -Path "$Base\user_files" -ItemType Directory -Force | Out-Null
+Copy-Item -Path "$env:USERPROFILE\Downloads\*" -Destination "$Base\user_files" -Recurse -Force -ErrorAction SilentlyContinue
+Copy-Item -Path "$env:USERPROFILE\Desktop\*" -Destination "$Base\user_files" -Recurse -Force -ErrorAction SilentlyContinue
+Get-ChildItem -Path $Base -Recurse -File | ForEach-Object { $h=Get-FileHash -Algorithm SHA256 -Path $_.FullName; "$($h.Hash)  $($_.FullName)" | Out-File "$Base\hashes.txt" -Append }
+Compress-Archive -Path $Base\* -DestinationPath "C:\evidence\evidence_$ts.zip" -Force
+Write-Host "Evidence collected in $Base and archived to C:\evidence\evidence_$ts.zip"

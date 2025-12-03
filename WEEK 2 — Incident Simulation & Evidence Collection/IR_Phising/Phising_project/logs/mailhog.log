@@ -1,0 +1,1838 @@
+nohup: ignoring input
+2025/10/28 17:16:54 Using in-memory storage
+2025/10/28 17:16:54 [SMTP] Binding to address: 0.0.0.0:1025
+[HTTP] Binding to address: 0.0.0.0:8025
+2025/10/28 17:16:54 Serving under http://0.0.0.0:8025/
+Creating API v1 with WebPath: 
+Creating API v2 with WebPath: 
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Starting session
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 30 bytes: 'MAIL FROM:<sender@lab.local>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] Processing line: MAIL FROM:<sender@lab.local>
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<sender@lab.local>'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] In MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 32 bytes: '250 Sender sender@lab.local ok\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 29 bytes: 'RCPT TO:<test@victim.local>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] Processing line: RCPT TO:<test@victim.local>
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<test@victim.local>'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] In RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] Got RCPT command
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 36 bytes: '250 Recipient test@victim.local ok\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 6 bytes: 'DATA\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] Processing line: DATA
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] In RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 266 bytes: 'Date: Tue, 28 Oct 2025 17:17:11 -0400\r\nTo: test@victim.local\r\nFrom: sender@lab.local\r\nSubject: test Tue, 28 Oct 2025 17:17:11 -0400\r\nMessage-Id: <20251028171711.013857@kali>\r\nX-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/\r\n\r\nThis is a test mailing\r\n\r\n\r\n.\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 17:17:11 Parsing Content from string: 'Date: Tue, 28 Oct 2025 17:17:11 -0400
+To: test@victim.local
+From: sender@lab.local
+Subject: test Tue, 28 Oct 2025 17:17:11 -0400
+Message-Id: <20251028171711.013857@kali>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+This is a test mailing
+
+'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Storing message nDsP5AV0xSMPvYcw_XB3A2VwHxC5LoSd1o1tS0rypb0=@mailhog.example
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 80 bytes: '250 Ok: queued as nDsP5AV0xSMPvYcw_XB3A2VwHxC5LoSd1o1tS0rypb0=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57680] Session ended
+Sending content: {
+  "ID": "nDsP5AV0xSMPvYcw_XB3A2VwHxC5LoSd1o1tS0rypb0=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "sender",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "test",
+      "Domain": "victim.local",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Date": [
+        "Tue, 28 Oct 2025 17:17:11 -0400"
+      ],
+      "From": [
+        "sender@lab.local"
+      ],
+      "Message-Id": [
+        "\u003c20251028171711.013857@kali\u003e"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id nDsP5AV0xSMPvYcw_XB3A2VwHxC5LoSd1o1tS0rypb0=@mailhog.example; Tue, 28 Oct 2025 17:17:11 -0400"
+      ],
+      "Return-Path": [
+        "\u003csender@lab.local\u003e"
+      ],
+      "Subject": [
+        "test Tue, 28 Oct 2025 17:17:11 -0400"
+      ],
+      "To": [
+        "test@victim.local"
+      ],
+      "X-Mailer": [
+        "swaks v20240103.0 jetmore.org/john/code/swaks/"
+      ]
+    },
+    "Body": "This is a test mailing\r\n\r\n",
+    "Size": 261,
+    "MIME": null
+  },
+  "Created": "2025-10-28T17:17:11.277227509-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "sender@lab.local",
+    "To": [
+      "test@victim.local"
+    ],
+    "Data": "Date: Tue, 28 Oct 2025 17:17:11 -0400\r\nTo: test@victim.local\r\nFrom: sender@lab.local\r\nSubject: test Tue, 28 Oct 2025 17:17:11 -0400\r\nMessage-Id: \u003c20251028171711.013857@kali\u003e\r\nX-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/\r\n\r\nThis is a test mailing\r\n\r\n",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Starting session
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 18 bytes: 'ehlo [127.0.1.1]\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: ESTABLISH] Processing line: ehlo [127.0.1.1]
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args '[127.0.1.1]'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 23 bytes: '250-Hello [127.0.1.1]\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 30 bytes: 'mail from:<sender@lab.local>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] Processing line: mail from:<sender@lab.local>
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] In state 6, got command 'MAIL', args 'from:<sender@lab.local>'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] In MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 32 bytes: '250 Sender sender@lab.local ok\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 29 bytes: 'rcpt to:<test@victim.local>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] Processing line: rcpt to:<test@victim.local>
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] In state 7, got command 'RCPT', args 'to:<test@victim.local>'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] In RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] Got RCPT command
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 36 bytes: '250 Recipient test@victim.local ok\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 6 bytes: 'data\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] Processing line: data
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] In RCPT state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 50 bytes: 'Subject: test mailh\r\n\r\nThis is a MailHog test\r\n.\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 17:17:11 Parsing Content from string: 'Subject: test mailh
+
+This is a MailHog test'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Storing message bUipwjE3YEdwtNKjIBUVun4SRc2ndZFgnjG-5ya2jvE=@mailhog.example
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 80 bytes: '250 Ok: queued as bUipwjE3YEdwtNKjIBUVun4SRc2ndZFgnjG-5ya2jvE=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Received 6 bytes: 'quit\r\n'
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] Processing line: quit
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Sent 9 bytes: '221 Bye\r\n'
+Sending content: {
+  "ID": "bUipwjE3YEdwtNKjIBUVun4SRc2ndZFgnjG-5ya2jvE=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "sender",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "test",
+      "Domain": "victim.local",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Message-ID": [
+        "bUipwjE3YEdwtNKjIBUVun4SRc2ndZFgnjG-5ya2jvE=@mailhog.example"
+      ],
+      "Received": [
+        "from [127.0.1.1] by mailhog.example (MailHog)\r\n          id bUipwjE3YEdwtNKjIBUVun4SRc2ndZFgnjG-5ya2jvE=@mailhog.example; Tue, 28 Oct 2025 17:17:11 -0400"
+      ],
+      "Return-Path": [
+        "\u003csender@lab.local\u003e"
+      ],
+      "Subject": [
+        "test mailh"
+      ]
+    },
+    "Body": "This is a MailHog test",
+    "Size": 45,
+    "MIME": null
+  },
+  "Created": "2025-10-28T17:17:11.403640331-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "sender@lab.local",
+    "To": [
+      "test@victim.local"
+    ],
+    "Data": "Subject: test mailh\r\n\r\nThis is a MailHog test",
+    "Helo": "[127.0.1.1]"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 17:17:11 [SMTP 127.0.0.1:57688] Session ended
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Starting session
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 17 bytes: 'AUTH PLAIN ACAA\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Processing line: AUTH PLAIN ACAA
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] In state 6, got command 'AUTH', args 'PLAIN ACAA'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] In MAIL state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Got AUTH command, staying in MAIL state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Got PLAIN authentication: ACAA
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 31 bytes: '235 Authentication successful\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] In MAIL state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 31 bytes: 'RCPT TO:<kgg900014@gmail.com>\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] Processing line: RCPT TO:<kgg900014@gmail.com>
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<kgg900014@gmail.com>'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] In RCPT state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] Got RCPT command
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 38 bytes: '250 Recipient kgg900014@gmail.com ok\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 6 bytes: 'DATA\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] Processing line: DATA
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] In RCPT state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 543 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:47:30 -0400\r\nFrom: training@lab.local\r\nX-Mailer: gophish\r\nSubject: Default Email from Gophish\r\nTo: "khaled gamal" <kgg900014@gmail.com>\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nIt works!\r\n\r\nThis is an email letting you know that your gophish\r\nconfiguration was successful.\r\nHere are the details:\r\n\r\nWho you sent from: training@lab.local\r\n\r\nWho you sent to:=20\r\n First Name: khaled\r\n Last Name: gamal\r\n Position: assuit\r\n\r\nNow go send some phish!\r\n.\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 17:47:30 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 17:47:30 -0400
+From: training@lab.local
+X-Mailer: gophish
+Subject: Default Email from Gophish
+To: "khaled gamal" <kgg900014@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+It works!
+
+This is an email letting you know that your gophish
+configuration was successful.
+Here are the details:
+
+Who you sent from: training@lab.local
+
+Who you sent to:=20
+ First Name: khaled
+ Last Name: gamal
+ Position: assuit
+
+Now go send some phish!'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Storing message pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 80 bytes: '250 Ok: queued as pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example\r\n'
+Got message in APIv1 event stream
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Sending content: {
+  "ID": "pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "kgg900014",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/plain; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 17:47:30 -0400"
+      ],
+      "From": [
+        "training@lab.local"
+      ],
+      "Message-ID": [
+        "pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example; Tue, 28 Oct 2025 17:47:30 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "Default Email from Gophish"
+      ],
+      "To": [
+        "\"khaled gamal\" \u003ckgg900014@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "It works!\r\n\r\nThis is an email letting you know that your gophish\r\nconfiguration was successful.\r\nHere are the details:\r\n\r\nWho you sent from: training@lab.local\r\n\r\nWho you sent to:=20\r\n First Name: khaled\r\n Last Name: gamal\r\n Position: assuit\r\n\r\nNow go send some phish!",
+    "Size": 538,
+    "MIME": null
+  },
+  "Created": "2025-10-28T17:47:30.982742007-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "kgg900014@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:47:30 -0400\r\nFrom: training@lab.local\r\nX-Mailer: gophish\r\nSubject: Default Email from Gophish\r\nTo: \"khaled gamal\" \u003ckgg900014@gmail.com\u003e\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nIt works!\r\n\r\nThis is an email letting you know that your gophish\r\nconfiguration was successful.\r\nHere are the details:\r\n\r\nWho you sent from: training@lab.local\r\n\r\nWho you sent to:=20\r\n First Name: khaled\r\n Last Name: gamal\r\n Position: assuit\r\n\r\nNow go send some phish!",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 17:47:30 [SMTP 127.0.0.1:59336] Session ended
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Starting session
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 17 bytes: 'AUTH PLAIN ACAA\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Processing line: AUTH PLAIN ACAA
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In state 6, got command 'AUTH', args 'PLAIN ACAA'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Got AUTH command, staying in MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Got PLAIN authentication: ACAA
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 31 bytes: '235 Authentication successful\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 33 bytes: 'RCPT TO:<123hhkhaled@gmail.com>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Processing line: RCPT TO:<123hhkhaled@gmail.com>
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<123hhkhaled@gmail.com>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Got RCPT command
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 40 bytes: '250 Recipient 123hhkhaled@gmail.com ok\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 6 bytes: 'DATA\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Processing line: DATA
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:54:00 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761688440392179882.8666.5817788822632905471@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled ali" <123hhkhaled@gmail.com>\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <a href=3D"http://http://192.168.159.130:8025?rid=3D6VH7Pn5" style=3D=\r\n"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If t'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 307 bytes: 'he button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://http://192.168.159.130:8025?rid=3D6VH7Pn5\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D6VH7Pn5'/></body>\r\n</html>\r\n.\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 17:54:00 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 17:54:00 -0400
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761688440392179882.8666.5817788822632905471@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled ali" <123hhkhaled@gmail.com>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <a href=3D"http://http://192.168.159.130:8025?rid=3D6VH7Pn5" style=3D=
+"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=
+r-radius:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://http://192.168.159.130:8025?rid=3D6VH7Pn5
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=
+:8025/track?rid=3D6VH7Pn5'/></body>
+</html>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Storing message D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 80 bytes: '250 Ok: queued as D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "123hhkhaled",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 17:54:00 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761688440392179882.8666.5817788822632905471@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example; Tue, 28 Oct 2025 17:54:00 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://http://192.168.159.130:8025?rid=3D6VH7Pn5\" style=3D=\r\n\"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://http://192.168.159.130:8025?rid=3D6VH7Pn5\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D6VH7Pn5'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e",
+    "Size": 1326,
+    "MIME": null
+  },
+  "Created": "2025-10-28T17:54:00.39651154-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "123hhkhaled@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:54:00 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761688440392179882.8666.5817788822632905471@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://http://192.168.159.130:8025?rid=3D6VH7Pn5\" style=3D=\r\n\"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://http://192.168.159.130:8025?rid=3D6VH7Pn5\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D6VH7Pn5'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 31 bytes: 'RCPT TO:<kgg900014@gmail.com>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Processing line: RCPT TO:<kgg900014@gmail.com>
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<kgg900014@gmail.com>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Got RCPT command
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 38 bytes: '250 Recipient kgg900014@gmail.com ok\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 6 bytes: 'DATA\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Processing line: DATA
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] In RCPT state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:54:00 -0400\r\nMessage-Id: <1761688440406851466.8666.8433451443302390057@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled Nazir" <kgg900014@gmail.com>\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nContent-Transfer-Encoding: quoted-printable\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <a href=3D"http://http://192.168.159.130:8025?rid=3D3tWBlwn" style=3D=\r\n"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If t'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 307 bytes: 'he button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://http://192.168.159.130:8025?rid=3D3tWBlwn\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D3tWBlwn'/></body>\r\n</html>\r\n.\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 17:54:00 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 17:54:00 -0400
+Message-Id: <1761688440406851466.8666.8433451443302390057@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled Nazir" <kgg900014@gmail.com>
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <a href=3D"http://http://192.168.159.130:8025?rid=3D3tWBlwn" style=3D=
+"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=
+r-radius:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://http://192.168.159.130:8025?rid=3D3tWBlwn
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=
+:8025/track?rid=3D3tWBlwn'/></body>
+</html>'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Storing message ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 80 bytes: '250 Ok: queued as ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "kgg900014",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 17:54:00 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761688440406851466.8666.8433451443302390057@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from  by mailhog.example (MailHog)\r\n          id ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example; Tue, 28 Oct 2025 17:54:00 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://http://192.168.159.130:8025?rid=3D3tWBlwn\" style=3D=\r\n\"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://http://192.168.159.130:8025?rid=3D3tWBlwn\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D3tWBlwn'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e",
+    "Size": 1326,
+    "MIME": null
+  },
+  "Created": "2025-10-28T17:54:00.410591416-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "kgg900014@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 17:54:00 -0400\r\nMessage-Id: \u003c1761688440406851466.8666.8433451443302390057@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nContent-Transfer-Encoding: quoted-printable\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://http://192.168.159.130:8025?rid=3D3tWBlwn\" style=3D=\r\n\"display:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;borde=\r\nr-radius:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://http://192.168.159.130:8025?rid=3D3tWBlwn\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://http:/192.168.159.130=\r\n:8025/track?rid=3D3tWBlwn'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e",
+    "Helo": ""
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 17:54:00 [SMTP 127.0.0.1:51342] Session ended
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/websocket
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/websocket
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/pg7AmiTJIlxGpNlJFbQCpMs1AenRGbyovym6g24QGDg=@mailhog.example
+
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Starting session
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 17 bytes: 'AUTH PLAIN ACAA\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Processing line: AUTH PLAIN ACAA
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In state 6, got command 'AUTH', args 'PLAIN ACAA'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Got AUTH command, staying in MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Got PLAIN authentication: ACAA
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 31 bytes: '235 Authentication successful\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 33 bytes: 'RCPT TO:<123hhkhaled@gmail.com>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Processing line: RCPT TO:<123hhkhaled@gmail.com>
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<123hhkhaled@gmail.com>'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 40 bytes: '250 Recipient 123hhkhaled@gmail.com ok\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:03:26 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761692606219260815.8666.2678165691815699980@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled ali" <123hhkhaled@gmail.com>\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3D2FXIqw1 w=\r\nith the campaign URL you set (use IP:PORT) -->\r\n      <a href=3D"http://192.168.159.130:8080?rid=3D2FXIqw1" style=3D"displa=\r\ny:inline-block;padding:12px 18px;ba'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 415 bytes: 'ckground:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130:8080?rid=3D2FXIqw1\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3D2FXIqw1'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:03:26 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:03:26 -0400
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761692606219260815.8666.2678165691815699980@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled ali" <123hhkhaled@gmail.com>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3D2FXIqw1 w=
+ith the campaign URL you set (use IP:PORT) -->
+      <a href=3D"http://192.168.159.130:8080?rid=3D2FXIqw1" style=3D"displa=
+y:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=
+s:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130:8080?rid=3D2FXIqw1
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=
+track?rid=3D2FXIqw1'/></body>
+</html>
+'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Storing message cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 80 bytes: '250 Ok: queued as cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "123hhkhaled",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:03:26 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761692606219260815.8666.2678165691815699980@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example; Tue, 28 Oct 2025 19:03:26 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3D2FXIqw1 w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3D2FXIqw1\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3D2FXIqw1\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3D2FXIqw1'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1434,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:03:26.232736049-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "123hhkhaled@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:03:26 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761692606219260815.8666.2678165691815699980@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3D2FXIqw1 w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3D2FXIqw1\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3D2FXIqw1\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3D2FXIqw1'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 31 bytes: 'RCPT TO:<kgg900014@gmail.com>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Processing line: RCPT TO:<kgg900014@gmail.com>
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<kgg900014@gmail.com>'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 38 bytes: '250 Recipient kgg900014@gmail.com ok\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] In RCPT state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:03:26 -0400\r\nTo: "Khaled Nazir" <kgg900014@gmail.com>\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761692606243607072.8666.2957532097954176941@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3De61UTpP w=\r\nith the campaign URL you set (use IP:PORT) -->\r\n      <a href=3D"http://192.168.159.130:8080?rid=3De61UTpP" style=3D"displa=\r\ny:inline-block;padding:12px 18px;ba'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 415 bytes: 'ckground:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130:8080?rid=3De61UTpP\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3De61UTpP'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:03:26 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:03:26 -0400
+To: "Khaled Nazir" <kgg900014@gmail.com>
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761692606243607072.8666.2957532097954176941@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3De61UTpP w=
+ith the campaign URL you set (use IP:PORT) -->
+      <a href=3D"http://192.168.159.130:8080?rid=3De61UTpP" style=3D"displa=
+y:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=
+s:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130:8080?rid=3De61UTpP
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=
+track?rid=3De61UTpP'/></body>
+</html>
+'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Storing message WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 80 bytes: '250 Ok: queued as WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "kgg900014",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:03:26 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761692606243607072.8666.2957532097954176941@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from  by mailhog.example (MailHog)\r\n          id WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example; Tue, 28 Oct 2025 19:03:26 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3De61UTpP w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3De61UTpP\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3De61UTpP\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3De61UTpP'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1434,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:03:26.249508424-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "kgg900014@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:03:26 -0400\r\nTo: \"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761692606243607072.8666.2957532097954176941@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3De61UTpP w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3De61UTpP\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3De61UTpP\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3De61UTpP'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": ""
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 19:03:26 [SMTP 127.0.0.1:33446] Session ended
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] GET /api/v1/messages/WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example
+
+[APIv1] GET /api/v1/messages/cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Starting session
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 17 bytes: 'AUTH PLAIN ACAA\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Processing line: AUTH PLAIN ACAA
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In state 6, got command 'AUTH', args 'PLAIN ACAA'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Got AUTH command, staying in MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Got PLAIN authentication: ACAA
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 31 bytes: '235 Authentication successful\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 33 bytes: 'RCPT TO:<123hhkhaled@gmail.com>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Processing line: RCPT TO:<123hhkhaled@gmail.com>
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<123hhkhaled@gmail.com>'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 40 bytes: '250 Recipient 123hhkhaled@gmail.com ok\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:07:15 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761692835814683572.8666.3791570332707275417@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled ali" <123hhkhaled@gmail.com>\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3DDkby3Gq w=\r\nith the campaign URL you set (use IP:PORT) -->\r\n      <a href=3D"http://192.168.159.130:8080?rid=3DDkby3Gq" style=3D"displa=\r\ny:inline-block;padding:12px 18px;ba'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 415 bytes: 'ckground:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130:8080?rid=3DDkby3Gq\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DDkby3Gq'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:07:15 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:07:15 -0400
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761692835814683572.8666.3791570332707275417@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled ali" <123hhkhaled@gmail.com>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3DDkby3Gq w=
+ith the campaign URL you set (use IP:PORT) -->
+      <a href=3D"http://192.168.159.130:8080?rid=3DDkby3Gq" style=3D"displa=
+y:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=
+s:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130:8080?rid=3DDkby3Gq
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=
+track?rid=3DDkby3Gq'/></body>
+</html>
+'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Storing message VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 80 bytes: '250 Ok: queued as VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "123hhkhaled",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:07:15 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761692835814683572.8666.3791570332707275417@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example; Tue, 28 Oct 2025 19:07:15 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3DDkby3Gq w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3DDkby3Gq\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3DDkby3Gq\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DDkby3Gq'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1434,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:07:15.820746189-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "123hhkhaled@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:07:15 -0400\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761692835814683572.8666.3791570332707275417@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3DDkby3Gq w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3DDkby3Gq\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3DDkby3Gq\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DDkby3Gq'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 31 bytes: 'RCPT TO:<kgg900014@gmail.com>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Processing line: RCPT TO:<kgg900014@gmail.com>
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<kgg900014@gmail.com>'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 38 bytes: '250 Recipient kgg900014@gmail.com ok\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] In RCPT state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:07:15 -0400\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled Nazir" <kgg900014@gmail.com>\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761692835836999086.8666.828245107348396860@kali>\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3DYVRTGJ9 w=\r\nith the campaign URL you set (use IP:PORT) -->\r\n      <a href=3D"http://192.168.159.130:8080?rid=3DYVRTGJ9" style=3D"displa=\r\ny:inline-block;padding:12px 18px;bac'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 414 bytes: 'kground:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button does not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130:8080?rid=3DYVRTGJ9\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DYVRTGJ9'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:07:15 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:07:15 -0400
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled Nazir" <kgg900014@gmail.com>
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761692835836999086.8666.828245107348396860@kali>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <!-- GoPhish will replace http://192.168.159.130:8080?rid=3DYVRTGJ9 w=
+ith the campaign URL you set (use IP:PORT) -->
+      <a href=3D"http://192.168.159.130:8080?rid=3DYVRTGJ9" style=3D"displa=
+y:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=
+s:6px;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130:8080?rid=3DYVRTGJ9
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=
+track?rid=3DYVRTGJ9'/></body>
+</html>
+'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Storing message 2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 80 bytes: '250 Ok: queued as 2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "kgg900014",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:07:15 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761692835836999086.8666.828245107348396860@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from  by mailhog.example (MailHog)\r\n          id 2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example; Tue, 28 Oct 2025 19:07:15 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3DYVRTGJ9 w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3DYVRTGJ9\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3DYVRTGJ9\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DYVRTGJ9'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1433,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:07:15.846172915-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "kgg900014@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:07:15 -0400\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761692835836999086.8666.828245107348396860@kali\u003e\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003c!-- GoPhish will replace http://192.168.159.130:8080?rid=3DYVRTGJ9 w=\r\nith the campaign URL you set (use IP:PORT) --\u003e\r\n      \u003ca href=3D\"http://192.168.159.130:8080?rid=3DYVRTGJ9\" style=3D\"displa=\r\ny:inline-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radiu=\r\ns:6px;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130:8080?rid=3DYVRTGJ9\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130:8080/=\r\ntrack?rid=3DYVRTGJ9'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": ""
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 19:07:15 [SMTP 127.0.0.1:57360] Session ended
+[APIv1] GET /api/v1/messages/2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example
+
+[APIv1] GET /api/v1/messages/VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example
+
+[APIv2] GET /api/v2/jim
+[APIv2] GET /api/v2/messages
+[APIv2] GET /api/v2/websocket
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example
+
+[APIv1] POST /api/v1/messages/2C8VaFN38xSJFQD9teSXl7wunnYEeCG-qEmBv1WdERU=@mailhog.example/delete
+
+[APIv2] GET /api/v2/messages
+[APIv1] GET /api/v1/messages/VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example
+
+[APIv1] POST /api/v1/messages/VZnHbhWpTHwMlQMF7ZZNO-bUrPP0upHY4BTaKr0fz-A=@mailhog.example/delete
+
+[APIv2] GET /api/v2/messages
+[APIv1] GET /api/v1/messages/WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example
+
+[APIv1] POST /api/v1/messages/WKwZWTHnTlc9QwzeTWK4nylOzyQxTQ9RQ-YhOlrEjMQ=@mailhog.example/delete
+
+[APIv2] GET /api/v2/messages
+[APIv1] GET /api/v1/messages/cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example
+
+[APIv1] POST /api/v1/messages/cjLqv_zVrvh0fQ5e3VtPE-dzk-bftgPkIxfeXKig3HE=@mailhog.example/delete
+
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/ioaPcsobXFBTieCKy0vOmyav45rYwjHHdvloJ0Tk3J8=@mailhog.example
+
+[APIv1] GET /api/v1/messages/D1F7AKWRC9B9xciyVDJXtIBqBKjsLSQJ2jXT8mnmLNo=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Starting session
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: INVALID] Started session, switching to ESTABLISH state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 35 bytes: '220 mailhog.example ESMTP MailHog\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 11 bytes: 'EHLO kali\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: ESTABLISH] Processing line: EHLO kali
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: ESTABLISH] In state 1, got command 'EHLO', args 'kali'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: ESTABLISH] In ESTABLISH state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: ESTABLISH] Got EHLO command, switching to MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 16 bytes: '250-Hello kali\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 16 bytes: '250-PIPELINING\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 16 bytes: '250 AUTH PLAIN\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 17 bytes: 'AUTH PLAIN ACAA\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Processing line: AUTH PLAIN ACAA
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In state 6, got command 'AUTH', args 'PLAIN ACAA'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Got AUTH command, staying in MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Got PLAIN authentication: ACAA
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 31 bytes: '235 Authentication successful\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 33 bytes: 'RCPT TO:<123hhkhaled@gmail.com>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Processing line: RCPT TO:<123hhkhaled@gmail.com>
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<123hhkhaled@gmail.com>'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 40 bytes: '250 Recipient 123hhkhaled@gmail.com ok\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:14:26 -0400\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled ali" <123hhkhaled@gmail.com>\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: <1761693266404372881.8666.2837632669716549881@kali>\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <a href=3D"http://192.168.159.130?rid=3DJZKrRyr" style=3D"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button do'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 274 bytes: 'es not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130?rid=3DJZKrRyr\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DJZKrRyr'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:14:26 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:14:26 -0400
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled ali" <123hhkhaled@gmail.com>
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Message-Id: <1761693266404372881.8666.2837632669716549881@kali>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <a href=3D"http://192.168.159.130?rid=3DJZKrRyr" style=3D"display:inl=
+ine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=
+;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130?rid=3DJZKrRyr
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=
+?rid=3DJZKrRyr'/></body>
+</html>
+'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Storing message P1CfMUPkFhehkFxm5n5Y6eYXcdoWfuThbbPCcKyfgI8=@mailhog.example
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 80 bytes: '250 Ok: queued as P1CfMUPkFhehkFxm5n5Y6eYXcdoWfuThbbPCcKyfgI8=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "P1CfMUPkFhehkFxm5n5Y6eYXcdoWfuThbbPCcKyfgI8=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "123hhkhaled",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:14:26 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761693266404372881.8666.2837632669716549881@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from kali by mailhog.example (MailHog)\r\n          id P1CfMUPkFhehkFxm5n5Y6eYXcdoWfuThbbPCcKyfgI8=@mailhog.example; Tue, 28 Oct 2025 19:14:26 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://192.168.159.130?rid=3DJZKrRyr\" style=3D\"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130?rid=3DJZKrRyr\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DJZKrRyr'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1293,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:14:26.40892081-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "123hhkhaled@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:14:26 -0400\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled ali\" \u003c123hhkhaled@gmail.com\u003e\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nMessage-Id: \u003c1761693266404372881.8666.2837632669716549881@kali\u003e\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://192.168.159.130?rid=3DJZKrRyr\" style=3D\"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130?rid=3DJZKrRyr\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DJZKrRyr'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": "kali"
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 32 bytes: 'MAIL FROM:<training@lab.local>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Processing line: MAIL FROM:<training@lab.local>
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In state 6, got command 'MAIL', args 'FROM:<training@lab.local>'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Got MAIL command, switching to RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 34 bytes: '250 Sender training@lab.local ok\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 31 bytes: 'RCPT TO:<kgg900014@gmail.com>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Processing line: RCPT TO:<kgg900014@gmail.com>
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In state 7, got command 'RCPT', args 'TO:<kgg900014@gmail.com>'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Got RCPT command
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 38 bytes: '250 Recipient kgg900014@gmail.com ok\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 6 bytes: 'DATA\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Processing line: DATA
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In state 7, got command 'DATA', args ''
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] In RCPT state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: RCPT] Got DATA command, switching to DATA state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 37 bytes: '354 End data with <CR><LF>.<CR><LF>\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 1024 bytes: 'Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:14:26 -0400\r\nMessage-Id: <1761693266421016955.8666.2716744812144179882@kali>\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: "Khaled Nazir" <kgg900014@gmail.com>\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nContent-Transfer-Encoding: quoted-printable\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n<!doctype html>\r\n<html>\r\n  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5">\r\n    <p>Hi Khaled,</p>\r\n\r\n    <p>Our security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.</p>\r\n\r\n    <p>Please click the button below to reset and confirm your account:</p>\r\n\r\n    <p style=3D"text-align:center;margin:18px 0">\r\n      <a href=3D"http://192.168.159.130?rid=3DhwF0MfO" style=3D"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none">Reset your password</a>\r\n    </p>\r\n\r\n    <p>If the button do'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 274 bytes: 'es not work, copy and paste this link into your brow=\r\nser:<br>\r\n      http://192.168.159.130?rid=3DhwF0MfO\r\n    </p>\r\n\r\n    <p>Regards,<br>IT Support</p>\r\n  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DhwF0MfO'/></body>\r\n</html>\r\n\r\n.\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: DATA] Got EOF, storing message and switching to MAIL state
+2025/10/28 19:14:26 Parsing Content from string: 'Mime-Version: 1.0
+Date: Tue, 28 Oct 2025 19:14:26 -0400
+Message-Id: <1761693266421016955.8666.2716744812144179882@kali>
+Subject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=
+To: "Khaled Nazir" <kgg900014@gmail.com>
+From: 123hhkhaled@gmail.com
+X-Mailer: gophish
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!doctype html>
+<html>
+  <body style=3D"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=
+ght:1.5">
+    <p>Hi Khaled,</p>
+
+    <p>Our security systems detected suspicious activity on your account. T=
+o ensure your access remains secure we require a brief verification.</p>
+
+    <p>Please click the button below to reset and confirm your account:</p>
+
+    <p style=3D"text-align:center;margin:18px 0">
+      <a href=3D"http://192.168.159.130?rid=3DhwF0MfO" style=3D"display:inl=
+ine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=
+;text-decoration:none">Reset your password</a>
+    </p>
+
+    <p>If the button does not work, copy and paste this link into your brow=
+ser:<br>
+      http://192.168.159.130?rid=3DhwF0MfO
+    </p>
+
+    <p>Regards,<br>IT Support</p>
+  <img alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=
+?rid=3DhwF0MfO'/></body>
+</html>
+'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Storing message 5iyiIeyATdKO_DqgruA1I0GCaYu4FlJM6SvBDFBo6FU=@mailhog.example
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 80 bytes: '250 Ok: queued as 5iyiIeyATdKO_DqgruA1I0GCaYu4FlJM6SvBDFBo6FU=@mailhog.example\r\n'
+Got message in APIv2 websocket channel
+[APIv2] BROADCAST /api/v2/websocket
+Got message in APIv1 event stream
+Sending content: {
+  "ID": "5iyiIeyATdKO_DqgruA1I0GCaYu4FlJM6SvBDFBo6FU=@mailhog.example",
+  "From": {
+    "Relays": null,
+    "Mailbox": "training",
+    "Domain": "lab.local",
+    "Params": ""
+  },
+  "To": [
+    {
+      "Relays": null,
+      "Mailbox": "kgg900014",
+      "Domain": "gmail.com",
+      "Params": ""
+    }
+  ],
+  "Content": {
+    "Headers": {
+      "Content-Transfer-Encoding": [
+        "quoted-printable"
+      ],
+      "Content-Type": [
+        "text/html; charset=UTF-8"
+      ],
+      "Date": [
+        "Tue, 28 Oct 2025 19:14:26 -0400"
+      ],
+      "From": [
+        "123hhkhaled@gmail.com"
+      ],
+      "Message-Id": [
+        "\u003c1761693266421016955.8666.2716744812144179882@kali\u003e"
+      ],
+      "Mime-Version": [
+        "1.0"
+      ],
+      "Received": [
+        "from  by mailhog.example (MailHog)\r\n          id 5iyiIeyATdKO_DqgruA1I0GCaYu4FlJM6SvBDFBo6FU=@mailhog.example; Tue, 28 Oct 2025 19:14:26 -0400"
+      ],
+      "Return-Path": [
+        "\u003ctraining@lab.local\u003e"
+      ],
+      "Subject": [
+        "=?UTF-8?q?Security_Training_=E2=80=94_Please_Read?="
+      ],
+      "To": [
+        "\"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e"
+      ],
+      "X-Mailer": [
+        "gophish"
+      ]
+    },
+    "Body": "\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://192.168.159.130?rid=3DhwF0MfO\" style=3D\"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130?rid=3DhwF0MfO\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DhwF0MfO'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Size": 1293,
+    "MIME": null
+  },
+  "Created": "2025-10-28T19:14:26.426299419-04:00",
+  "MIME": null,
+  "Raw": {
+    "From": "training@lab.local",
+    "To": [
+      "kgg900014@gmail.com"
+    ],
+    "Data": "Mime-Version: 1.0\r\nDate: Tue, 28 Oct 2025 19:14:26 -0400\r\nMessage-Id: \u003c1761693266421016955.8666.2716744812144179882@kali\u003e\r\nSubject: =?UTF-8?q?Security_Training_=E2=80=94_Please_Read?=\r\nTo: \"Khaled Nazir\" \u003ckgg900014@gmail.com\u003e\r\nFrom: 123hhkhaled@gmail.com\r\nX-Mailer: gophish\r\nContent-Transfer-Encoding: quoted-printable\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n\u003c!doctype html\u003e\r\n\u003chtml\u003e\r\n  \u003cbody style=3D\"font-family:Arial,Helvetica,sans-serif;color:#222;line-hei=\r\nght:1.5\"\u003e\r\n    \u003cp\u003eHi Khaled,\u003c/p\u003e\r\n\r\n    \u003cp\u003eOur security systems detected suspicious activity on your account. T=\r\no ensure your access remains secure we require a brief verification.\u003c/p\u003e\r\n\r\n    \u003cp\u003ePlease click the button below to reset and confirm your account:\u003c/p\u003e\r\n\r\n    \u003cp style=3D\"text-align:center;margin:18px 0\"\u003e\r\n      \u003ca href=3D\"http://192.168.159.130?rid=3DhwF0MfO\" style=3D\"display:inl=\r\nine-block;padding:12px 18px;background:#0b63d6;color:#fff;border-radius:6px=\r\n;text-decoration:none\"\u003eReset your password\u003c/a\u003e\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eIf the button does not work, copy and paste this link into your brow=\r\nser:\u003cbr\u003e\r\n      http://192.168.159.130?rid=3DhwF0MfO\r\n    \u003c/p\u003e\r\n\r\n    \u003cp\u003eRegards,\u003cbr\u003eIT Support\u003c/p\u003e\r\n  \u003cimg alt=3D'' style=3D'display: none' src=3D'http://192.168.159.130/track=\r\n?rid=3DhwF0MfO'/\u003e\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+    "Helo": ""
+  }
+}
+
+[APIv1] BROADCAST /api/v1/events
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Received 6 bytes: 'QUIT\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Processing line: QUIT
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] In state 6, got command 'QUIT', args ''
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] [PROTO: MAIL] Got QUIT verb, staying in MAIL state
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Sent 9 bytes: '221 Bye\r\n'
+2025/10/28 19:14:26 [SMTP 127.0.0.1:52982] Session ended
+[APIv1] GET /api/v1/messages/5iyiIeyATdKO_DqgruA1I0GCaYu4FlJM6SvBDFBo6FU=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] GET /api/v1/messages/P1CfMUPkFhehkFxm5n5Y6eYXcdoWfuThbbPCcKyfgI8=@mailhog.example
+
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/messages
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv2] GET /api/v2/websocket
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events
+[APIv1] KEEPALIVE /api/v1/events

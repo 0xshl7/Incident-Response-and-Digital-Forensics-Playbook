@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Preparation & Team Setup | IR Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>IR Playbook</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>IRT Roles</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Communication</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>IR Checklist</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Policy Docs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-book"></i>
+                    <span>Playbook</span>
+                </a>
+            </nav>
+            <div class="week-progress">
+                <h4>Project Timeline</h4>
+                <div class="week-item active">
+                    <span class="week-dot"></span>
+                    <span>Preparation</span>
+                </div>
+                <div class="week-item">
+                    <span class="week-dot"></span>
+                    <span>Simulation</span>
+                </div>
+                <div class="week-item">
+                    <span class="week-dot"></span>
+                    <span>Containment</span>
+                </div>
+                <div class="week-item">
+                    <span class="week-dot"></span>
+                    <span>Post-Incident</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Incident Preparation & Team Setup</h1>
+                    <p class="subtitle">Building the foundation for effective incident response</p>
+                </div>
+                <div class="header-right">
+                    <div class="date-badge">
+                        <i class="fas fa-calendar"></i>
+                        <span id="current-date"></span>
+                    </div>
+                    <div class="status-badge in-progress">
+                        <i class="fas fa-spinner"></i>
+                        <span>In Progress</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Progress Overview -->
+            <section class="progress-section">
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <h3>Progress</h3>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="tasks-completed">0</span>
+                            <span class="stat-label">Tasks Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="tasks-total">6</span>
+                            <span class="stat-label">Total Tasks</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="deliverables-count">0/2</span>
+                            <span class="stat-label">Deliverables</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tasks Grid -->
+            <section class="tasks-section">
+                <h2><i class="fas fa-tasks"></i> Tasks</h2>
+                
+                <div class="tasks-grid">
+                    <!-- Task 1: Define IRT Roles -->
+                    <div class="task-card" data-task="1">
+                        <div class="task-header">
+                            <div class="task-icon roles">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="task-status">
+                                <input type="checkbox" id="task1" class="task-checkbox">
+                                <label for="task1">Mark Complete</label>
+                            </div>
+                        </div>
+                        <h3>Define IRT Roles & Responsibilities</h3>
+                        <p>Establish the Incident Response Team structure with clear role definitions and accountability.</p>
+                        <div class="task-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>IR Manager</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-search"></i>
+                                <span>Lead Investigator</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Forensic Analyst</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Communications Lead</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-balance-scale"></i>
+                                <span>Legal/Compliance</span>
+                            </div>
+                        </div>
+                        <button class="btn-expand" onclick="toggleRolesModal()">
+                            <i class="fas fa-expand"></i> View Roles Chart
+                        </button>
+                    </div>
+
+                    <!-- Task 2: Communication Plan -->
+                    <div class="task-card" data-task="2">
+                        <div class="task-header">
+                            <div class="task-icon communication">
+                                <i class="fas fa-satellite-dish"></i>
+                            </div>
+                            <div class="task-status">
+                                <input type="checkbox" id="task2" class="task-checkbox">
+                                <label for="task2">Mark Complete</label>
+                            </div>
+                        </div>
+                        <h3>Set Up Communication Plan</h3>
+                        <p>Define communication channels, escalation procedures, and notification protocols.</p>
+                        <div class="communication-matrix">
+                            <div class="comm-item">
+                                <div class="comm-icon critical">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="comm-details">
+                                    <strong>Critical</strong>
+                                    <span>Phone + Email + Slack</span>
+                                </div>
+                            </div>
+                            <div class="comm-item">
+                                <div class="comm-icon high">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="comm-details">
+                                    <strong>High</strong>
+                                    <span>Email + Slack</span>
+                                </div>
+                            </div>
+                            <div class="comm-item">
+                                <div class="comm-icon medium">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                                <div class="comm-details">
+                                    <strong>Medium</strong>
+                                    <span>Email + Ticket</span>
+                                </div>
+                            </div>
+                            <div class="comm-item">
+                                <div class="comm-icon low">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="comm-details">
+                                    <strong>Low</strong>
+                                    <span>Ticket System</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-expand" onclick="toggleCommModal()">
+                            <i class="fas fa-expand"></i> View Full Plan
+                        </button>
+                    </div>
+
+                    <!-- Task 3: IR Checklist -->
+                    <div class="task-card" data-task="3">
+                        <div class="task-header">
+                            <div class="task-icon checklist">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="task-status">
+                                <input type="checkbox" id="task3" class="task-checkbox">
+                                <label for="task3">Mark Complete</label>
+                            </div>
+                        </div>
+                        <h3>Create IR Checklist</h3>
+                        <p>Develop a comprehensive checklist for incident response procedures.</p>
+                        <div class="checklist-preview">
+                            <div class="checklist-phase">
+                                <h4><i class="fas fa-search"></i> Detection</h4>
+                                <ul>
+                                    <li>Identify incident indicators</li>
+                                    <li>Validate alert authenticity</li>
+                                    <li>Document initial findings</li>
+                                </ul>
+                            </div>
+                            <div class="checklist-phase">
+                                <h4><i class="fas fa-gavel"></i> Triage</h4>
+                                <ul>
+                                    <li>Assess severity level</li>
+                                    <li>Determine scope</li>
+                                    <li>Assign resources</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn-expand" onclick="toggleChecklistModal()">
+                            <i class="fas fa-expand"></i> View Full Checklist
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deliverables Section -->
+            <section class="deliverables-section">
+                <h2><i class="fas fa-file-export"></i> Week 1 Deliverables</h2>
+                
+                <div class="deliverables-grid">
+                    <!-- Deliverable 1: IR Policy & Roles Chart -->
+                    <div class="deliverable-card">
+                        <div class="deliverable-header">
+                            <div class="deliverable-icon policy">
+                                <i class="fas fa-file-shield"></i>
+                            </div>
+                            <div class="deliverable-status pending">
+                                <i class="fas fa-clock"></i>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                        <h3>IR Policy & Roles Chart</h3>
+                        <p>Formal incident response policy document with organizational chart showing team structure and responsibilities.</p>
+                        <div class="deliverable-contents">
+                            <h4>Contents:</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Policy objectives and scope</li>
+                                <li><i class="fas fa-check-circle"></i> IRT organizational structure</li>
+                                <li><i class="fas fa-check-circle"></i> Role descriptions and RACI matrix</li>
+                                <li><i class="fas fa-check-circle"></i> Escalation procedures</li>
+                                <li><i class="fas fa-check-circle"></i> Contact information</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn-primary" onclick="generatePolicyDoc()">
+                                <i class="fas fa-download"></i> Generate Document
+                            </button>
+                            <button class="btn-secondary" onclick="previewPolicy()">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Deliverable 2: IR Playbook Template -->
+                    <div class="deliverable-card">
+                        <div class="deliverable-header">
+                            <div class="deliverable-icon playbook">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="deliverable-status pending">
+                                <i class="fas fa-clock"></i>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                        <h3>IR Playbook Template</h3>
+                        <p>Comprehensive playbook template with procedures for common incident types and response workflows.</p>
+                        <div class="deliverable-contents">
+                            <h4>Playbook Sections:</h4>
+                            <ul>
+                                <li><i class="fas fa-fish"></i> Phishing Response</li>
+                                <li><i class="fas fa-virus"></i> Malware/Ransomware</li>
+                                <li><i class="fas fa-database"></i> Data Breach</li>
+                                <li><i class="fas fa-user-secret"></i> Insider Threat</li>
+                                <li><i class="fas fa-network-wired"></i> Network Intrusion</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn-primary" onclick="generatePlaybook()">
+                                <i class="fas fa-download"></i> Generate Playbook
+                            </button>
+                            <button class="btn-secondary" onclick="previewPlaybook()">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IRT Roles Chart -->
+            <section class="roles-chart-section">
+                <h2><i class="fas fa-sitemap"></i> IRT Organization Chart</h2>
+                <div class="org-chart">
+                    <div class="org-level level-1">
+                        <div class="org-card ir-manager">
+                            <div class="org-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>IR Manager</h4>
+                            <p>Overall incident coordination</p>
+                            <span class="org-badge">Leadership</span>
+                        </div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level level-2">
+                        <div class="org-card lead-investigator">
+                            <div class="org-avatar">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>Lead Investigator</h4>
+                            <p>Technical investigation lead</p>
+                            <span class="org-badge">Technical</span>
+                        </div>
+                        <div class="org-card forensic-analyst">
+                            <div class="org-avatar">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4>Forensic Analyst</h4>
+                            <p>Evidence collection & analysis</p>
+                            <span class="org-badge">Technical</span>
+                        </div>
+                        <div class="org-card comms-lead">
+                            <div class="org-avatar">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h4>Communications Lead</h4>
+                            <p>Internal/external communications</p>
+                            <span class="org-badge">Support</span>
+                        </div>
+                        <div class="org-card legal">
+                            <div class="org-avatar">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Legal/Compliance</h4>
+                            <p>Regulatory & legal guidance</p>
+                            <span class="org-badge">Advisory</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions-section">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="startIncidentSimulation()">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Start Week 2 Simulation</span>
+                    </button>
+                    <button class="action-btn" onclick="exportDocuments()">
+                        <i class="fas fa-file-export"></i>
+                        <span>Export All Documents</span>
+                    </button>
+                    <button class="action-btn" onclick="scheduleTraining()">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Schedule IRT Training</span>
+                    </button>
+                    <button class="action-btn" onclick="testCommunication()">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Test Comm Channels</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Roles Modal -->
+    <div id="rolesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-users"></i> IRT Roles & Responsibilities</h2>
+                <button class="modal-close" onclick="toggleRolesModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table class="roles-table">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Responsibilities</th>
+                            <th>Skills Required</th>
+                            <th>Escalation To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>IR Manager</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Coordinate incident response activities</li>
+                                    <li>Make critical decisions</li>
+                                    <li>Manage stakeholder communications</li>
+                                    <li>Allocate resources</li>
+                                </ul>
+                            </td>
+                            <td>Leadership, Communication, Risk Management</td>
+                            <td>CISO / Executive Team</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lead Investigator</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Lead technical investigation</li>
+                                    <li>Analyze attack vectors</li>
+                                    <li>Coordinate with forensic team</li>
+                                    <li>Document technical findings</li>
+                                </ul>
+                            </td>
+                            <td>Threat Analysis, SIEM, Network Security</td>
+                            <td>IR Manager</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forensic Analyst</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Collect and preserve evidence</li>
+                                    <li>Analyze memory dumps and logs</li>
+                                    <li>Create forensic timeline</li>
+                                    <li>Maintain chain of custody</li>
+                                </ul>
+                            </td>
+                            <td>Digital Forensics, Malware Analysis, Tools (EnCase, FTK)</td>
+                            <td>Lead Investigator</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communications Lead</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Draft internal notifications</li>
+                                    <li>Prepare external statements</li>
+                                    <li>Coordinate with PR/Legal</li>
+                                    <li>Maintain communication logs</li>
+                                </ul>
+                            </td>
+                            <td>Technical Writing, Crisis Communication</td>
+                            <td>IR Manager</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal/Compliance</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Advise on regulatory requirements</li>
+                                    <li>Review breach notifications</li>
+                                    <li>Coordinate with law enforcement</li>
+                                    <li>Document compliance actions</li>
+                                </ul>
+                            </td>
+                            <td>Regulatory Knowledge (GDPR, HIPAA), Legal Expertise</td>
+                            <td>General Counsel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communication Plan Modal -->
+    <div id="commModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-satellite-dish"></i> Communication Plan</h2>
+                <button class="modal-close" onclick="toggleCommModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="comm-plan-section">
+                    <h3>Escalation Matrix</h3>
+                    <table class="comm-table">
+                        <thead>
+                            <tr>
+                                <th>Severity</th>
+                                <th>Response Time</th>
+                                <th>Primary Channel</th>
+                                <th>Notify</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="severity-critical">
+                                <td><span class="severity-badge critical">Critical</span></td>
+                                <td>15 minutes</td>
+                                <td>Phone + Emergency Slack</td>
+                                <td>CISO, IR Manager, Legal, Executive Team</td>
+                            </tr>
+                            <tr class="severity-high">
+                                <td><span class="severity-badge high">High</span></td>
+                                <td>1 hour</td>
+                                <td>Email + Slack</td>
+                                <td>IR Manager, Department Heads</td>
+                            </tr>
+                            <tr class="severity-medium">
+                                <td><span class="severity-badge medium">Medium</span></td>
+                                <td>4 hours</td>
+                                <td>Email + Ticket</td>
+                                <td>IR Team Lead, System Owners</td>
+                            </tr>
+                            <tr class="severity-low">
+                                <td><span class="severity-badge low">Low</span></td>
+                                <td>24 hours</td>
+                                <td>Ticket System</td>
+                                <td>Assigned Analyst</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="comm-plan-section">
+                    <h3>Communication Channels</h3>
+                    <div class="channels-grid">
+                        <div class="channel-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>Emergency Hotline</h4>
+                            <p>24/7 IR Hotline: +1-XXX-XXX-XXXX</p>
+                        </div>
+                        <div class="channel-card">
+                            <i class="fab fa-slack"></i>
+                            <h4>Slack</h4>
+                            <p>#incident-response (private)</p>
+                        </div>
+                        <div class="channel-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email</h4>
+                            <p>ir-team@company.com</p>
+                        </div>
+                        <div class="channel-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <h4>Ticketing</h4>
+                            <p>ServiceNow / Jira</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checklist Modal -->
+    <div id="checklistModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2><i class="fas fa-clipboard-check"></i> IR Checklist</h2>
+                <button class="modal-close" onclick="toggleChecklistModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="checklist-full">
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-search"></i> 1. Detection & Identification</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Identify and validate the incident indicator/alert</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Document initial observations (time, source, symptoms)</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Determine incident category (malware, phishing, data breach, etc.)</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Assess initial severity level</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Create incident ticket with unique ID</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-gavel"></i> 2. Triage & Assessment</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Determine scope of affected systems/users</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Identify potentially compromised data</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Assess business impact</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Assign severity level (Critical/High/Medium/Low)</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Notify appropriate stakeholders per communication plan</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-box"></i> 3. Containment</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Implement short-term containment measures</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Isolate affected systems if necessary</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Preserve evidence before system changes</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Document all containment actions taken</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Implement long-term containment strategy</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-broom"></i> 4. Eradication</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Identify and eliminate root cause</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Remove malware/unauthorized access</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Apply necessary patches/updates</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Reset compromised credentials</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Verify eradication completeness</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-redo"></i> 5. Recovery</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Restore systems from clean backups</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Verify system integrity</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Monitor for signs of persistence</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Gradually restore services</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Confirm normal operations</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checklist-category">
+                        <h3><i class="fas fa-graduation-cap"></i> 6. Lessons Learned</h3>
+                        <div class="checklist-items">
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Conduct post-incident review meeting</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Document timeline and actions taken</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Identify process improvements</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Update IR procedures as needed</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox">
+                                <span>Complete final incident report</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

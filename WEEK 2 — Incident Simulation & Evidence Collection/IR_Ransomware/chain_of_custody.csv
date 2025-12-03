@@ -1,0 +1,12 @@
+﻿EvidenceID,FileName,CollectedBy,DateTime,Location,SHA256,Description
+EVID-995761D7,notes.txt,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\notes.txt,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-0D472942,notes.txt.locked,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\notes.txt.locked,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-96A5D004,password_list.txt,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\password_list.txt,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-962A97BB,password_list.txt.locked,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\password_list.txt.locked,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-CDBF4640,README_RECOVER.txt,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\README_RECOVER.txt,DC6C73D1DDB0BC66B1CAC8DDB68B198D79CC0EFCF8394FB1C2D11371811D6104,user file / simulated locked
+EVID-CE2DC2F8,README_RECOVER.txt.locked,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\README_RECOVER.txt.locked,DC6C73D1DDB0BC66B1CAC8DDB68B198D79CC0EFCF8394FB1C2D11371811D6104,user file / simulated locked
+EVID-13A72C90,report.txt,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\report.txt,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-4BDC1FA9,report.txt.locked,whoami,2025-11-07T16:23:37,C:\Users\whoami\Documents\report.txt.locked,E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855,user file / simulated locked
+EVID-D941D248,safe-ransom.ps1,whoami,2025-11-07T16:23:37,C:\Evidence\safe-ransom.ps1,930C0EA2EB640935227BF2603EA89D656B5284011A13C5C3E30E7691BCF664DF,artifact from Evidence folder
+EVID-ECDC6AB6,sim_log.txt,whoami,2025-11-07T16:23:37,C:\Evidence\sim_outputs\sim_log.txt,40E861749773225FF09BA14D6A97759CAD335E48B00ED2CFA3A839D4AD82E545,artifact from Evidence folder
+EVID-MEMDUMP01,explorer.DMP,whoami,2025-11-07T16:40:00,C:\Evidence\memory\explorer.DMP,7BFB7D4148974E81EF33F7973E9CD72FC6E34F1AFF5D37D0FF1AAA38B51E539E,Memory dump (explorer.exe) collected for forensic analysis

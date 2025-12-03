@@ -1,0 +1,8 @@
+Timestamp,Event,Actor,EvidenceRef,Notes
+2025-11-07T16:21:09Z,Simulation started,whoami,,safe-ransom.ps1 executed
+2025-11-07T16:21:09Z,Created README_RECOVER.txt,System,EVID-CDBF4640,Ransom note dropped in Documents by simulation
+2025-11-07T16:21:09Z,Created locked copies of files,System,EVID-0D472942;EVID-962A97BB;EVID-CE2DC2F8;EVID-4BDC1FA9,"notes.txt.locked, password_list.txt.locked, README_RECOVER.txt.locked, report.txt.locked"
+2025-11-07T16:21:09Z,Simulation log saved,System,EVID-ECDC6AB6,sim_log.txt saved to C:\Evidence\sim_outputs
+2025-11-07T16:23:37Z,Hashes recorded,whoami,EVID-D941D248;EVID-ECDC6AB6;EVID-CDBF4640,hashes for script/logs/ransom-note saved
+2025-11-07T16:25:00Z,Initial incident notes created,whoami,EVID-ECDC6AB6,incident_notes.txt (manual)
+2025-11-07T16:40:00Z,Memory image captured,whoami,EVID-MEMDUMP01,Process memory dump (explorer.exe) collected and stored

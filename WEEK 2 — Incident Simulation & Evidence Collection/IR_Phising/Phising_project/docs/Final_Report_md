@@ -1,0 +1,61 @@
+
+**Author:** Khaled Gamal   
+**Project:** Phishing Simulation — GoPhish + MailHog  
+**Date collected:** 2025-10-28
+
+---
+
+## 1. Executive Summary
+- **Type:** Phishing simulation (credential harvesting)
+- **Tools used:** GoPhish (phishing engine), MailHog (SMTP sink), VM: Kali (attacker), Windows (target)
+- **Objective:** Simulate phishing, collect evidence, test incident response procedures and user awareness.
+
+---
+
+## 2. Timeline (key timestamps)
+- MailHog started: PUT_TIMESTAMP_MAILHOG
+- GoPhish admin started: PUT_TIMESTAMP_GOPHISH
+- Campaign launched: PUT_TIMESTAMP_LAUNCH
+- Emails delivered: PUT_TIMESTAMP_DELIVERED
+- Link clicks / credential submissions: PUT_TIMESTAMP_CLICKS
+ 
+ ---
+
+## 3. Evidence collected (paths)
+- MailHog .eml files: `~/ir_project/evidence/mailhog_eml/`
+- Campaign results CSV: `~/ir_project/evidence/lab_results_all.csv`
+- PCAP (if present): `~/ir_project/evidence/*.pcap`
+- GoPhish logs: `~/ir_project/gophish_logs/gophish.log`
+- Hashes: `~/ir_project/evidence/hashes.txt`
+
+---
+
+## 4. Technical analysis & root cause
+- **Attack flow:** Email → Click → Landing page → Credentials submitted.
+- **Artifacts observed:** Raw `.eml` files (MailHog), `results` table exported from GoPhish (CSV), any network PCAPs showing HTTP(S) requests to landing page.
+- **Root cause:** User interaction with a crafted email (phishing) and lack of detection/blocking for the simulated template. Recommend follow-up on user awareness and email protections.
+
+---
+
+## 5. Containment, eradication & recovery
+- **Containment:** Disabled the campaign in GoPhish; removed landing page and phishing content.
+- **Eradication:** Stopped GoPhish and MailHog services on test network; removed test accounts from groups.
+- **Recovery:** Reset any test credentials that were captured. If this were production, force password reset and investigate lateral movement.
+
+---
+
+## 6. Lessons learned & recommendations
+- Regular phishing awareness training and simulated campaigns.
+- Implement/validate SPF, DKIM, DMARC for mail domains.
+- Centralize logging and increase retention for forensic readiness.
+- Harden web servers and use HTTPS with valid certs for external-facing assets.
+- Keep a playbook with exact steps to disable campaigns and invalidate links.
+
+---
+
+## 7. Appendices
+- **Appendix A:** Email template — `~/ir_project/www/email_template.html`
+- **Appendix B:** Landing page HTML — `~/ir_project/www/gophish_landing.html`
+- **Appendix C:** Raw evidence — see `~/ir_project/evidence/` (MailHog .eml, CSVs, pcap)
+- **Appendix D:** Hashes — `~/ir_project/evidence/hashes.txt`
+ 
