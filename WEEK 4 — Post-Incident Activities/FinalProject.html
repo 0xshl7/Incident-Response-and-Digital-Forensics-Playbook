@@ -1,0 +1,590 @@
+<!-- Chosen Palette: Warm Neutral & Slate -->
+<!-- Application Structure Plan: I've designed this as an interactive dashboard, not a linear report. A sticky sidebar navigation (on desktop) and a dropdown (on mobile) allow users to jump to specific sections (Overview, Attack Flow, Forensics, Resolution, Remediation). This is more user-friendly as executives can go straight to the "Overview" or "Remediation Plan," while analysts can jump to the "Forensic Deep Dive." I've transformed the static tables and lists into visual stat cards, a vulnerability chart, an interactive attack flow diagram, and tabbed/collapsible content to manage information density. -->
+<!-- Visualization & Content Choices: 
+- Overview: Report Metrics -> Goal: Inform -> Viz: Stat Cards (HTML/Tailwind) -> Interaction: Static -> Justification: Quick high-level summary.
+- Overview: Core Vulnerabilities -> Goal: Inform -> Viz: Donut Chart (Chart.js) -> Interaction: Hover -> Justification: Instantly visualizes the root cause mix.
+- Incident Description: Attack Stages -> Goal: Organize/Relate -> Viz: Visual Flow Diagram (HTML/Tailwind + Unicode arrows) -> Interaction: Static -> Justification: Makes the 2-stage attack chain intuitive. NO SVG/Mermaid.
+- Timeline: Events -> Goal: Show Change -> Viz: Styled Timeline List (HTML/Tailwind) -> Interaction: Static -> Justification: More visual and integrated than a table.
+- Forensics (IoCs & Evidence): 2 Tables -> Goal: Organize -> Viz: Interactive Tabs (JS + HTML/Tailwind) -> Interaction: Click tabs -> Justification: Manages high data density, avoids overwhelming scroll.
+- Resolution: 3-Part Steps -> Goal: Compare -> Viz: 3-Column Grid (HTML/Tailwind) -> Interaction: Static -> Justification: Easy side-by-side comparison of response.
+- Remediation (Advisories): Employee List -> Goal: Organize -> Viz: Accordion List (JS + HTML/Tailwind) -> Interaction: Click to expand/collapse -> Justification: Makes dense text scannable and accessible.
+-->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Response Dashboard | IR-PHISH-RANSOM-20251028</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            background-color: #334155;
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .stat-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .tab-button.active {
+            color: #4f46e5;
+            background-color: #eef2ff;
+        }
+        .tab-button:not(.active):hover {
+            background-color: #f1f5f9;
+        }
+        .accordion-header {
+            cursor: pointer;
+            padding: 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header:hover {
+            background-color: #f9fafb;
+        }
+        .accordion-content {
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-top: 0;
+            border-radius: 0 0 0.5rem 0.5rem;
+            background-color: #ffffff;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 1023px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="flex min-h-screen">
+        
+        <nav id="sidebar" class="w-64 bg-slate-800 text-slate-200 p-5 fixed h-full shadow-lg hidden lg:block">
+            <h1 class="text-xl font-bold text-white mb-8">IR Dashboard</h1>
+            <ul class="space-y-2">
+                <li><a href="#overview" class="nav-link active">Overview</a></li>
+                <li><a href="#attack-flow" class="nav-link">Attack Flow</a></li>
+                <li><a href="#forensics" class="nav-link">Forensic Deep Dive</a></li>
+                <li><a href="#response" class="nav-link">Response & Resolution</a></li>
+                <li><a href="#remediation" class="nav-link">Remediation Plan</a></li>
+            </ul>
+        </nav>
+
+        <main class="lg:ml-64 flex-1">
+            
+            <header class="bg-white p-4 shadow-md sticky top-0 z-10 lg:static">
+                <div class="max-w-7xl mx-auto flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-indigo-600">Incident Report: IR-PHISH-RANSOM-20251028</h2>
+                    
+                    <div class="lg:hidden">
+                        <select id="mobile-nav" class="w-full max-w-xs p-2 rounded-lg border border-gray-300 bg-white font-medium">
+                            <option value="#overview">Overview</option>
+                            <option value="#attack-flow">Attack Flow</option>
+                            <option value="#forensics">Forensic Deep Dive</option>
+                            <option value="#response">Response & Resolution</option>
+                            <option value="#remediation">Remediation Plan</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6 md:p-10 max-w-7xl mx-auto">
+                
+                <section id="overview" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Executive Overview</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        This section summarizes the two-stage simulated attack, confirms the resolution status, and identifies the core vulnerabilities and strategic focus for remediation.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                        <div class="stat-card">
+                            <h4 class="text-sm font-medium text-gray-500 uppercase">Incident ID</h4>
+                            <p class="text-2xl font-bold text-slate-700 mt-2">IR-PHISH-RANSOM-20251028</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-sm font-medium text-gray-500 uppercase">Incident Type</h4>
+                            <p class="text-2xl font-bold text-slate-700 mt-2">Phishing & Ransomware</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-sm font-medium text-gray-500 uppercase">Resolution Status</h4>
+                            <p class="text-2xl font-bold text-green-600 mt-2">Contained & Resolved</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 text-center">Core Vulnerabilities Exploited</h4>
+                        <p class="text-center text-gray-600 mb-6">The attack was successful due to a combination of failures across technology and human layers.</p>
+                        <div class="chart-container">
+                            <canvas id="vulnerabilityChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="attack-flow" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Attack Flow & Timeline</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        The simulation documented a full attack chain, from initial email access to the final ransomware payload execution and impact.
+                    </p>
+
+                    <div class="stat-card mb-10">
+                        <h4 class="text-xl font-bold text-slate-800 mb-6 text-center">Multi-Stage Attack Chain</h4>
+                        <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-4">
+                            
+                            <div class="text-center p-4 bg-gray-100 rounded-lg w-full md:w-1/3">
+                                <span class="text-3xl">📧</span>
+                                <h5 class="text-lg font-semibold mt-2">Phase 1: Initial Access</h5>
+                                <p class="text-sm text-gray-600">Phishing Email (MailHog)</p>
+                            </div>
+
+                            <div class="text-5xl font-light text-gray-400">→</div>
+
+                            <div class="text-center p-4 bg-gray-100 rounded-lg w-full md:w-1/3">
+                                <span class="text-3xl">⌨️</span>
+                                <h5 class="text-lg font-semibold mt-2">Phase 2: Execution</h5>
+                                <p class="text-sm text-gray-600">`safe-ransom.ps1` Script</p>
+                            </div>
+
+                            <div class="text-5xl font-light text-gray-400">→</div>
+
+                            <div class="text-center p-4 bg-gray-100 rounded-lg w-full md:w-1/3">
+                                <span class="text-3xl">🔒</span>
+                                <h5 class="text-lg font-semibold mt-2">Phase 3: Impact</h5>
+                                <p class="text-sm text-gray-600">Files Encrypted (`.locked`)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h4 class="text-xl font-bold text-slate-800 mb-6">Detailed Incident Timeline</h4>
+                        <ul class="space-y-4 border-l-2 border-slate-300 pl-6">
+                            <li>
+                                <div class="font-semibold text-indigo-600">Oct 28, 2025 - 19:14:26 UTC</div>
+                                <p class="text-gray-700 ml-4"><strong class="font-medium text-gray-900">[STAGE 1]</strong> Phishing email successfully delivered to the test inbox.</p>
+                            </li>
+                            <li>
+                                <div class="font-semibold text-indigo-600">Nov 7, 2025 - 16:21:09 UTC</div>
+                                <p class="text-gray-700 ml-4"><strong class="font-medium text-gray-900">[STAGE 2]</strong> `safe-ransom.ps1` script executed by user `whoami`.</p>
+                            </li>
+                            <li>
+                                <div class="font-semibold text-indigo-600">Nov 7, 2025 - 16:21:09 UTC</div>
+                                <p class="text-gray-700 ml-4"><strong class="font-medium text-gray-900">[IMPACT]</strong> Ransom note (`README_RECOVER.txt`) dropped and file encryption began.</p>
+                            </li>
+                            <li>
+                                <div class="font-semibold text-indigo-600">Nov 7, 2025 - 16:23:37 UTC</div>
+                                <p class="text-gray-700 ml-4"><strong class="font-medium text-gray-900">[FORENSICS]</strong> All evidence (logs, files, script) collected and hashes computed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="forensics" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Forensic Deep Dive</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        This section contains the detailed technical artifacts collected during the investigation, including Indicators of Compromise (IoCs) and the complete evidence inventory.
+                    </p>
+
+                    <div class="mb-6 flex space-x-2 border-b-2 border-gray-200">
+                        <button class="tab-button active" data-tab-target="#tab-ioc">Indicators of Compromise</button>
+                        <button class="tab-button" data-tab-target="#tab-evidence">Evidence Inventory</button>
+                    </div>
+
+                    <div class="stat-card p-0 overflow-hidden">
+                        <div id="tab-ioc" class="data-tab-content">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Category</th>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">IoC Detail</th>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="p-4 font-medium">URL / IP</td>
+                                            <td class="p-4 text-sm font-mono">`http://192.168.159.130?rid=JZKrRyr`</td>
+                                            <td class="p-4 text-sm">Link used for initial payload delivery.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Signature</td>
+                                            <td class="p-4 text-sm font-mono">`X-Mailer: gophish`</td>
+                                            <td class="p-4 text-sm">Identifies the phishing campaign source.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Malware File</td>
+                                            <td class="p-4 text-sm font-mono">`safe-ransom.ps1`</td>
+                                            <td class="p-4 text-sm">The PowerShell execution payload.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">File Extension</td>
+                                            <td class="p-4 text-sm font-mono">`.locked`</td>
+                                            <td class="p-4 text-sm">Marker for encrypted files.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Ransom Note</td>
+                                            <td class="p-4 text-sm font-mono">`README_RECOVER.txt`</td>
+                                            <td class="p-4 text-sm">Dropped on the infected endpoint.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div id="tab-evidence" class="data-tab-content hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Evidence Type</th>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Description</th>
+                                            <th class="p-4 font-semibold text-sm text-gray-600 uppercase">SHA256 Hash Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="p-4 font-medium">Ransomware Executable</td>
+                                            <td class="p-4 text-sm">The executed PowerShell script (`safe-ransom.ps1`).</td>
+                                            <td class="p-4 text-sm font-mono">Confirmed (`930C1E4E...664DF`)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Encrypted Files</td>
+                                            <td class="p-4 text-sm">Copies of encrypted documents (e.g., `notes.txt.locked`).</td>
+                                            <td class="p-4 text-sm font-mono">Confirmed (`E3B0C442...855`)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Ransom Simulation Log</td>
+                                            <td class="p-4 text-sm">`sim_log.txt` recording file encryption activity.</td>
+                                            <td class="p-4 text-sm font-mono">Confirmed (`40E86174...82E545`)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 font-medium">Phishing Artifacts</td>
+                                            <td class="p-4 text-sm">SMTP Logs, Raw EML, Headers from initial access.</td>
+                                            <td class="p-4 text-sm font-mono">Hashes Recorded</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="response" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Response & Resolution</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        The IRT successfully managed containment, eradication, and simulated recovery by following the incident response plan.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <h4 class="text-xl font-bold text-slate-800 mb-4">5.1 Containment</h4>
+                            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                                <li>**Endpoint Isolation:** Infected host `whoami` immediately isolated from the network.</li>
+                                <li>**Perimeter Blocking:** Malicious URL and C2 IPs blocked at the firewall.</li>
+                                <li>**Email Quarantine:** All instances of the phishing email were quarantined.</li>
+                            </ul>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-xl font-bold text-slate-800 mb-4">5.2 Eradication</h4>
+                            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                                <li>**Malware Removal:** `safe-ransom.ps1` script securely located and removed.</li>
+                                <li>**Persistence Checks:** Scanned for scheduled tasks or registry keys.</li>
+                                <li>**Email Removal:** Malicious phishing emails deleted from all mailboxes.</li>
+                            </ul>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-xl font-bold text-slate-800 mb-4">5.3 Recovery</h4>
+                            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                                <li>**Restoration:** Affected system restored from a known clean, pre-infection backup.</li>
+                                <li>**Verification:** System fully scanned, verified clean, and reconnected to the network.</li>
+                                <li>**Filter Updates:** All IoCs added to EDR, SIEM, and proxy blocklists.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="remediation" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Remediation Plan</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        The following analysis identifies the core failures and provides a mandatory action plan to enhance security posture and prevent recurrence.
+                    </p>
+
+                    <div class="stat-card mb-10">
+                        <h4 class="text-xl font-bold text-slate-800 mb-6">6.1 Root Cause & Vulnerabilities</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Vulnerability</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Phase of Attack</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-600 uppercase">Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="p-4 font-medium">Email Authentication Deficiency</td>
+                                        <td class="p-4 text-sm">Initial Access</td>
+                                        <td class="p-4 text-sm">Allowed spoofed email to bypass perimeter defense.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-medium">Endpoint Execution Control</td>
+                                        <td class="p-4 text-sm">Execution</td>
+                                        <td class="p-4 text-sm">Allowed PowerShell (`.ps1`) to run and encrypt files.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-medium">User Awareness Gap</td>
+                                        <td class="p-4 text-sm">Initial Access & Execution</td>
+                                        <td class="p-4 text-sm">User was successfully targeted, initiating the attack chain.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="stat-card mb-10">
+                        <h4 class="text-xl font-bold text-slate-800 mb-6">6.3 Final Recommendations for Remediation</h4>
+                        <ol class="space-y-4 list-decimal list-outside pl-6 text-gray-700">
+                            <li><strong class="font-medium text-gray-900">Implement DMARC/SPF/DKIM:</strong> Enforce strong email authentication to eliminate sender spoofing.</li>
+                            <li><strong class="font-medium text-gray-900">Mandatory Awareness Training:</strong> Institute continuous phishing and social engineering training.</li>
+                            <li><strong class="font-medium text-gray-900">Enhance Filtering & Sandboxing:</strong> Automate blocking of malicious URLs and enforce sandboxing of attachments.</li>
+                            <li><strong class="font-medium text-gray-900">Enforce Multi-Factor Authentication (MFA):</strong> Implement MFA for all critical services to mitigate credential compromise.</li>
+                            <li><strong class="font-medium text-gray-900">Strengthen Monitoring (EDR/SIEM):</strong> Deploy an EDR solution to block malicious script execution and enhance detection.</li>
+                            <li><strong class="font-medium text-gray-900">Implement Security Baselines:</strong> Enforce least-privilege principles to limit malware impact.</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-6">6.4 Security Advisories for Employees</h4>
+                        <div class="space-y-3" id="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header" data-accordion-toggle>
+                                    <span>Scrutinize Sender Identity</span>
+                                    <span class="accordion-icon text-xl font-light text-gray-500">►</span>
+                                </div>
+                                <div class="accordion-content hidden">
+                                    <p>**Verify the authenticity** of the sender's email address by checking for subtle misspellings, mismatched domains, or unusual sender behavior. Do not rely solely on the display name.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header" data-accordion-toggle>
+                                    <span>Proactive Link Validation</span>
+                                    <span class="accordion-icon text-xl font-light text-gray-500">►</span>
+                                </div>
+                                <div class="accordion-content hidden">
+                                    <p>**Hover over all links** to inspect the destination URL before clicking. If the link is suspicious (e.g., unfamiliar IPs like `192.168.159.130`), **do not proceed**.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" data-accordion-toggle>
+                                    <span>Challenge Urgent Requests</span>
+                                    <span class="accordion-icon text-xl font-light text-gray-500">►</span>
+                                </div>
+                                <div class="accordion-content hidden">
+                                    <p>Treat any email demanding immediate action, especially involving account verification or financial details, as high-risk. **Independently verify** all such requests through a trusted, out-of-band communication channel (e.g., phone call).</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" data-accordion-toggle>
+                                    <span>Utilize Reporting Channels</span>
+                                    <span class="accordion-icon text-xl font-light text-gray-500">►</span>
+                                </div>
+                                <div class="accordion-content hidden">
+                                    <p>**Immediately report** any suspicious or confirmed phishing email via the designated corporate reporting tool. Timely reporting is critical for organization-wide containment.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" data-accordion-toggle>
+                                    <span>Safeguard Credentials</span>
+                                    <span class="accordion-icon text-xl font-light text-gray-500">►</span>
+                                </div>
+                                <div class="accordion-content hidden">
+                                    <p>Never share Multi-Factor Authentication (MFA) codes, PINs, or passwords with anyone, including personnel claiming to be from IT Support.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const ctx = document.getElementById('vulnerabilityChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Email Authentication Deficiency',
+                        'Endpoint Execution Control',
+                        'User Awareness Gap'
+                    ],
+                    datasets: [{
+                        label: 'Core Vulnerabilities',
+                        data: [33.3, 33.3, 33.4],
+                        backgroundColor: [
+                            '#4f46e5',
+                            '#334155',
+                            '#9ca3af'
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed.toFixed(1) + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.data-tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-tab-target');
+                    const targetContent = document.querySelector(targetId);
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    tabContents.forEach(content => content.classList.add('hidden'));
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                    }
+                });
+            });
+
+            const accordionToggles = document.querySelectorAll('[data-accordion-toggle]');
+            accordionToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.accordion-icon');
+                    const isHidden = content.classList.toggle('hidden');
+                    
+                    if (icon) {
+                        icon.textContent = isHidden ? '►' : '▼';
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.addEventListener('change', function() {
+                    if (this.value) {
+                        window.location.hash = this.value;
+                    }
+                });
+
+                const mobileObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            mobileNav.value = `#${id}`;
+                        }
+                    });
+                }, observerOptions);
+                
+                sections.forEach(section => {
+                    mobileObserver.observe(section);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
